@@ -49,21 +49,53 @@ void find_primes(int n) {
     cudaMemcpy(primes, d_primes, (n + 1) * sizeof(bool), cudaMemcpyDeviceToHost);
 
     // Print primes
+    int cnt = 0;
     for (int i = 2; i <= n; ++i) {
         if (primes[i]) {
-            std::cout << i << " ";
+            ++cnt;
+            //std::cout << i << " ";
         }
     }
     std::cout << std::endl;
+    std::cout << cnt << " primes found by CUDA from 2 to " << n << std::endl;
 
     // Free allocated memory
     delete[] primes;
     cudaFree(d_primes);
 }
 
+void sieveHost(bool* h_prime, int n) {
+    for (int i = 2; i <= sqrt(n); ++i) {
+        if (h_prime[i]) {
+            for (int j = i * i; j <= n; j += i) {
+                h_prime[j] = false;
+            }
+        }
+    }
+}
+
+
 int main() {
     int N = 1000000;  // Limit for prime search, you can adjust this number
     find_primes(N);    // Call the function to find primes
+
+    // Allocate memory on host
+    bool* h_prime = new bool[N + 1];
+    std::fill_n(h_prime, N + 1, true);
+    h_prime[0] = h_prime[1] = false;
+
+    // Perform sieve on host
+    sieveHost(h_prime, N);
+
+    int cnt = 0;
+    for (int i = 2; i <= N; ++i) {
+        if (h_prime[i]) {
+            ++cnt;
+            //std::cout << i << " ";
+        }
+    }
+    std::cout << cnt << " primes found by host from 2 to " << N << std::endl;
+
     return 0;
 }
 
