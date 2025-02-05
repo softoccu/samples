@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+
+message basic {
+  reserved 1 to 3;
+  double doubledata = 4;
+  float floatdata = 5;
+  int32 int32data = 6;
+  int64 int64data = 7;
+  uint32 uint32data = 8;
+  uint64 uint64data = 9;
+  sint32 sint32data = 10;
+  sint64 sint64data = 11;
+  fixed32 fixed32data = 12;
+  fixed64 fixed64data = 13;
+  sfixed32 sfixed32data = 14;
+  sfixed64 sfixed64data = 15;
+  bool booldata = 16;
+  string stringdata = 17;
+  bytes bytesdata = 18;
+}
+

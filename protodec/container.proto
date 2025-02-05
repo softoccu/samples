@@ -1,0 +1,40 @@
+syntax = "proto3";
+import public "basic.proto";
+
+message variant{
+  oneof test_oneof {
+    string name = 1;
+    int32 int32data = 2;
+  }
+}
+
+message rep_var{
+  repeated variant B_rep_var_E = 1;
+}
+
+message container{  
+  // enum
+  enum te {
+    UNIVERSAL = 0;
+    WEB = 1;
+    IMAGES = 2;
+    LOCAL = 3;
+    NEWS = 4;
+    PRODUCTS = 5;
+    VIDEO = 6;
+  }
+  te corpus = 1;
+  // vector set list deque are represent by repeated 
+  repeated int32 int32rep = 2;
+  // optional in not yet support
+  //optional uint32 uint32opt = 3;
+  repeated basic basic1 = 4;
+  // map
+  map<string, int32> B_map_string_int32_E = 5;
+  map<int32, basic> B_map_int32_basic_E = 6;
+  // variant/union  is represent by one of 
+  variant vardata = 7;
+  // nested
+  rep_var rep_var_data  = 9;
+  map<string, rep_var> map_rv = 10;
+}

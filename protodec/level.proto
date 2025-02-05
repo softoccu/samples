@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+
+message pic {
+  bytes data = 1;
+}
+
+message txt {
+  string data = 1;
+}
+
+message http10 {
+  string header = 1;
+  bytes data = 2;
+}
+
+message http11 {
+  bytes header = 1;
+  oneof multi_media {
+    pic picdata = 2;
+    txt txtdata = 3;
+  }
+}
+
+message udp {
+  bytes udpheader = 1;
+  bytes udpdata = 2;
+}
+
+message tcp {
+  bytes tcpheader = 1;
+  oneof tcpdata {
+    http10 http10package = 2;
+    http11 http11package = 3;
+  }
+}
+
+message ip {
+  bytes ipheader = 1;
+  oneof ipdata{
+    tcp tcppackage = 2;
+    udp udppackage = 3;
+  }
+}
+
+message arp {
+  bytes arpdata = 1;
+}
+
+message frame {
+  bytes frameheader = 1;
+  oneof framedata{
+    arp arppackage = 2;
+    ip  ippackage = 3;
+  }
+}
