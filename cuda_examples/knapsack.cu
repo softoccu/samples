@@ -2,6 +2,8 @@
 #include <vector>
 #include <cuda_runtime.h>
 #include <algorithm>
+#include <random>
+
 
 #define N 1024  // Number of items
 #define W 50    // Maximum weight of the knapsack
@@ -53,10 +55,14 @@ int main() {
     std::vector<int> weights(N);
     std::vector<int> values(N);
 
+    std::random_device rd;
+    std::default_random_engine generator(rd());
+    std::uniform_int_distribution<int> distribution_weight(1, 10);
+    std::uniform_int_distribution<int> distribution_value(1, 100);
     // Initialize weights and values randomly
     for (int i = 0; i < N; ++i) {
-        weights[i] = rand() % 10 + 1;  // Random weight between 1 and 10
-        values[i] = rand() % 100 + 1;  // Random value between 1 and 100
+        weights[i] = distribution_weight(generator); //  Random weight between 1 and 10
+        values[i] = distribution_value(generator);  //  Random value between 1 and 100
     }
 
     // Print weights and values of items
