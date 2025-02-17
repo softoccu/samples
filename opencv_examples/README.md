@@ -5,4 +5,7 @@ RTX 4090 with CUDA driver 570 and toolkit 12.8
 opencv 4.x built with cuda and codacodec
 some dependencies libs 
 
+![device image](steroe_camera.jpg)
+
 1 stereo_distance:  in this example, a stereo camera is used to get the distance, and the result show the left picture and right picture and also the disparity picture and distance picture. In the distance picture some color are used to show far and near, near is read and far is blue, from near to far is red, yellow, green and blue.
+![stereo image](stereo_distance/steroe_distance.png)
