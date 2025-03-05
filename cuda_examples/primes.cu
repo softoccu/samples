@@ -49,12 +49,15 @@ void find_primes(int n) {
     cudaMemcpy(primes, d_primes, (n + 1) * sizeof(bool), cudaMemcpyDeviceToHost);
 
     // Print primes
+    int cnt = 0;
     for (int i = 2; i <= n; ++i) {
         if (primes[i]) {
-            std::cout << i << " ";
+            ++cnt;
+            //std::cout << i << " ";
         }
     }
     std::cout << std::endl;
+    std::cout <<  cnt <<  " primes found from 2 to " << n << std::endl;
 
     // Free allocated memory
     delete[] primes;
