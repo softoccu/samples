@@ -56,7 +56,7 @@ int main(int argc, char * argv[]) {
     PIDController pid(Kp, Ki, Kd, targetTemperature);
     int i = 0;
     // Simulate the temperature control process over 100 time steps
-    while (abs( targetTemperature - currentTemperature > 1e-5)) {
+    while (abs( targetTemperature - currentTemperature ) > 1e-5) {
         // Get the PID control output (e.g., adjust the heater power)
         double controlSignal = pid.update(currentTemperature);
 	std::cout << "control signal= " << controlSignal << std::endl;
