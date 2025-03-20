@@ -14,3 +14,7 @@ Stereo camera device is in the below picture:
 2 object_track: in this example, a stereo camera is used, a bottle of water is inside both camera's sight, and then choose the bottle of water as the target to track(you need select the rectangle area of the bottle manually), then use the openCV track algorithm CSRT to track it.
 
 ![object track jif](object_track/object_tracking.gif)
+
+3 object_detect: in this example, a stereo camera is used, however only get image from left len, need used libtorch and opencv as dependencies. Before start, get a yolov8s.torchscript model, it can be exported from yolov8s.pt. And you may change model to see the difference without change code logic. After detect use opencv to put result on image and showing in realtime. This code use CPU so as to easy compile and run in you local, you need plug in a usb camera, build or download dependencies, and then can compile and run.
+
+ ![object detect jif](object_detect/yolov8/yolov8s_libtorch.gif)
