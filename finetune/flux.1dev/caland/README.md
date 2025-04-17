@@ -6,7 +6,7 @@ Fine tunning pictures
 
 ![finetuning_pictures1 image](Screenshot-from-2025-04-12-14-52-15.png)
 
-![finetuning_pictures2 image](Screenshot-from-2025-04-12-14-52-15.png)
+![finetuning_pictures2 image](Screenshot-from-2025-04-12-14-52-37.png)
 
 Run fine tuning
 
