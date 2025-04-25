@@ -1,0 +1,101 @@
+log,PasswordNotMatch,ThisUserNotExist,TokenExpired,TimeoutError,LogicError,NetworkError,CredentialExpired,DatabaseError,PermissionError
+Password does not match | No user found with the given username,0.702,0.298,,,,,,,
+Authentication token expired | Server response delayed | Incorrect password entered,0.243,,0.349,0.408,,,,,
+Unexpected error occurred,,,,,1.0,,,,
+Token expired. Re-authentication required,,,1.0,,,,,,
+Network timeout occurred | Timeout occurred while fetching data,,,,0.517,,0.483,,,
+"Expired credentials, please update | Operation took too long | Database query failed",,,,0.469,,,0.18,0.351,
+Unable to reach the server,,,,,,1.0,,,
+Permission error,,,,,,,,,1.0
+Server response delayed,,,,1.0,,,,,
+"Token has expired, please login again | Unauthorized access attempt",,,0.492,,,,,,0.508
+"Timeout occurred while fetching data | Invalid username, user does not exist | Expired credentials, please update",,0.28,,0.429,,,0.291,,
+You do not have permission to perform this action,,,,,,,,,1.0
+Authentication token expired | Access denied,,,0.375,,,,,,0.625
+User is not registered in the system | Incorrect password entered,0.563,0.437,,,,,,,
+Unexpected error occurred | Failed to connect to database | Server response delayed,,,,0.147,0.406,,,0.448,
+Your login credentials have expired,,,,,,,1.0,,
+User credentials expired | Operation took too long,,,,0.262,,,0.738,,
+Timeout occurred while fetching data | Database connection lost,,,,0.56,,,,0.44,
+Access denied | Failed login attempt due to wrong password | Operation took too long,0.324,,,0.416,,,,,0.26
+"Invalid username, user does not exist",,1.0,,,,,,,
+Incorrect password entered,1.0,,,,,,,,
+Failed to connect to database | Authentication token expired,,,0.525,,,,,0.475,
+Network connection failed,,,,,,1.0,,,
+Your login credentials have expired,,,,,,,1.0,,
+User credentials expired,,,,,,,1.0,,
+Password mismatch error | Request timed out,0.568,,,0.432,,,,,
+Credential expiration detected | Request timed out,,,,0.302,,,0.698,,
+Session token invalid | Access denied,,,0.731,,,,,,0.269
+Infinite loop detected | Authentication token expired | Unable to reach the server,,,0.538,,0.223,0.238,,,
+Failed to connect to database | Token expired. Re-authentication required | Permission error,,,0.31,,,,,0.199,0.49
+Permission error | Authentication token expired | Network connection failed,,,0.4,,,0.278,,,0.322
+Database connection lost,,,,,,,,1.0,
+"Token has expired, please login again | Database connection lost | No user found with the given username",,0.27,0.372,,,,,0.358,
+Your login credentials have expired | Unexpected error occurred,,,,,0.57,,0.43,,
+Infinite loop detected | Database connection lost | Permission error,,,,,0.451,,,0.377,0.172
+User is not registered in the system,,1.0,,,,,,,
+Cannot establish a network connection | Credential expiration detected,,,,,,0.497,0.503,,
+Incorrect password entered,1.0,,,,,,,,
+User is not registered in the system,,1.0,,,,,,,
+Operation took too long | Database query failed,,,,0.539,,,,0.461,
+Unable to reach the server | User credentials expired,,,,,,0.739,0.261,,
+Failed login attempt due to wrong password | User is not registered in the system | Token expired. Re-authentication required,0.449,0.141,0.41,,,,,,
+Operation took too long | User is not registered in the system,,0.443,,0.557,,,,,
+Your login credentials have expired,,,,,,,1.0,,
+"Invalid username, user does not exist",,1.0,,,,,,,
+"Credential expiration detected | Token has expired, please login again",,,0.71,,,,0.29,,
+"Infinite loop detected | Token has expired, please login again",,,0.593,,0.407,,,,
+Unauthorized access attempt | Password mismatch error | No user found with the given username,0.199,0.366,,,,,,,0.435
+Network connection failed | No user found with the given username | Null pointer exception,,0.431,,,0.158,0.411,,,
+Permission error,,,,,,,,,1.0
+You do not have permission to perform this action,,,,,,,,,1.0
+No user found with the given username | Request timed out | Your login credentials have expired,,0.239,,0.545,,,0.216,,
+"Token expired. Re-authentication required | Expired credentials, please update | Operation took too long",,,0.279,0.296,,,0.425,,
+"Token has expired, please login again | Request timed out | You do not have permission to perform this action",,,0.294,0.414,,,,,0.293
+"Invalid username, user does not exist | User credentials expired | SQL syntax error",,0.337,,,,,0.315,0.348,
+SQL syntax error | No user found with the given username | Network connection failed,,0.183,,,,0.472,,0.345,
+Incorrect password entered | Variable out of range | Network connection failed,0.274,,,,0.426,0.3,,,
+Database query failed | Infinite loop detected | Cannot establish a network connection,,,,,0.415,0.391,,0.194,
+Authentication token expired | Network timeout occurred | Unauthorized access attempt,,,0.515,,,0.282,,,0.202
+Token expired. Re-authentication required | No user found with the given username | Unable to reach the server,,0.365,0.27,,,0.366,,,
+"Invalid username, user does not exist | Failed login attempt due to wrong password",0.504,0.496,,,,,,,
+"Unable to reach the server | You do not have permission to perform this action | Token has expired, please login again",,,0.503,,,0.185,,,0.312
+Access denied | Failed to connect to database,,,,,,,,0.708,0.292
+"Expired credentials, please update | Token expired. Re-authentication required",,,0.411,,,,0.589,,
+Timeout occurred while fetching data | You do not have permission to perform this action,,,,0.332,,,,,0.668
+"User does not exist | Token has expired, please login again | Database query failed",,0.383,0.133,,,,,0.483,
+Timeout occurred while fetching data | Variable out of range | User is not registered in the system,,0.415,,0.171,0.414,,,,
+"User credentials expired | Token has expired, please login again | User does not exist",,0.498,0.25,,,,0.252,,
+"Token has expired, please login again | Infinite loop detected | Server response delayed",,,0.2,0.388,0.412,,,,
+"Invalid username, user does not exist | Password does not match",0.652,0.348,,,,,,,
+Token expired. Re-authentication required,,,1.0,,,,,,
+Unauthorized access attempt | Database query failed | Timeout occurred while fetching data,,,,0.162,,,,0.403,0.436
+"Credential expiration detected | Token has expired, please login again",,,0.347,,,,0.653,,
+Credential expiration detected | Password does not match | Null pointer exception,0.41,,,,0.368,,0.222,,
+Unexpected error occurred,,,,,1.0,,,,
+Incorrect password entered,1.0,,,,,,,,
+User is not registered in the system | SQL syntax error | Your login credentials have expired,,0.419,,,,,0.197,0.385,
+Database query failed | Session token invalid,,,0.47,,,,,0.53,
+"Session token invalid | Expired credentials, please update",,,0.678,,,,0.322,,
+Infinite loop detected | Password mismatch error | Timeout occurred while fetching data,0.53,,,0.296,0.174,,,,
+"Invalid username, user does not exist | You do not have permission to perform this action | Incorrect password entered",0.381,0.207,,,,,,,0.411
+"Token has expired, please login again",,,1.0,,,,,,
+You do not have permission to perform this action,,,,,,,,,1.0
+Server response delayed | Incorrect password entered | User credentials expired,0.328,,,0.327,,,0.345,,
+Database query failed | Token expired. Re-authentication required,,,0.507,,,,,0.493,
+Timeout occurred while fetching data | User does not exist,,0.494,,0.506,,,,,
+"Invalid username, user does not exist | Unexpected error occurred",,0.518,,,0.482,,,,
+"Network connection failed | Server response delayed | Expired credentials, please update",,,,0.295,,0.382,0.323,,
+User does not exist | Failed login attempt due to wrong password | Server response delayed,0.394,0.372,,0.234,,,,,
+Credential expiration detected | Variable out of range,,,,,0.259,,0.741,,
+Session token invalid | Variable out of range | SQL syntax error,,,0.311,,0.43,,,0.259,
+User is not registered in the system | Unable to reach the server | Failed to connect to database,,0.472,,,,0.231,,0.297,
+Password does not match,1.0,,,,,,,,
+User credentials expired | You do not have permission to perform this action | Failed login attempt due to wrong password,0.307,,,,,,0.307,,0.386
+Null pointer exception | You do not have permission to perform this action | User credentials expired,,,,,0.369,,0.393,,0.238
+Password mismatch error,1.0,,,,,,,,
+"Invalid username, user does not exist | Cannot establish a network connection | Operation took too long",,0.375,,0.34,,0.284,,,
+Permission error,,,,,,,,,1.0
+Unexpected error occurred | Password does not match,0.565,,,,0.435,,,,
+"Variable out of range | User is not registered in the system | Expired credentials, please update",,0.268,,,0.468,,0.265,,
