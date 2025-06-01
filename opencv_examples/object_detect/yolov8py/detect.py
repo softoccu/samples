@@ -13,7 +13,7 @@ VIDEO_DIR = 'videos'
 CONFIDENCE_THRESHOLD = 0.3
 AREA_THRESHOLD = 0.05
 CAMERA_INDEX = 0
-SKIP_FRAMES = 15  # 15FPS 每秒检测 1 帧
+SKIP_FRAMES = 15
 SEGMENT_DURATION_HOURS = 3
 use_manual_exposure = True  # 部署用 True，开发用 False
 
@@ -49,17 +49,18 @@ out, segment_start_time, current_video_path = get_new_video_writer()
 print("🟢 开始录像：", current_video_path)
 
 frame_count = 0
-last_brightness = 100
 last_exposure = -4
+last_brightness = 100
+last_exposure_update = datetime.min  # 上一次曝光更新时间
 
-# 曝光设置
+# 设置初始曝光
 if use_manual_exposure:
     cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)
     cap.set(cv2.CAP_PROP_EXPOSURE, last_exposure)
-    print("🔧 手动曝光")
+    print("🔧 手动曝光模式")
 else:
     cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.75)
-    print("🧪 自动曝光")
+    print("🧪 自动曝光模式")
 
 def adjust_exposure_by_brightness(avg_brightness):
     if avg_brightness < 50:
@@ -78,17 +79,18 @@ try:
         now = datetime.now()
         timestamp_str = now.strftime('%Y-%m-%d %I:%M:%S %p')
 
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        avg_brightness = np.mean(gray)
+        # 每分钟更新一次曝光
+        if use_manual_exposure and (now - last_exposure_update) > timedelta(minutes=1):
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            avg_brightness = np.mean(gray)
+            new_exp = adjust_exposure_by_brightness(avg_brightness)
+            if new_exp != last_exposure:
+                cap.set(cv2.CAP_PROP_EXPOSURE, new_exp)
+                last_exposure = new_exp
+                print(f"🌗 曝光调整为 {new_exp}（亮度={avg_brightness:.1f}）")
+            last_exposure_update = now
 
-        if use_manual_exposure:
-            if abs(avg_brightness - last_brightness) > 10:
-                new_exp = adjust_exposure_by_brightness(avg_brightness)
-                if new_exp != last_exposure:
-                    cap.set(cv2.CAP_PROP_EXPOSURE, new_exp)
-                    last_exposure = new_exp
-                last_brightness = avg_brightness
-
+        # 时间戳写入视频帧
         cv2.putText(frame, timestamp_str, (10, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
 
